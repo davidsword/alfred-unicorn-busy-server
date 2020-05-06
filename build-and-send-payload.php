@@ -17,6 +17,7 @@ die( $query );
 
 // Uses decimal colours.
 // @see https://convertingcolors.com/
+// @TODO it'd be great if the remote server did the conversion, _no one_ works in decimal colors.
 $colors = [
 	'red'    => 16711680, // #FF0000
 	'orange' => 16753920, // #FFA500
@@ -25,6 +26,7 @@ $colors = [
 ];
 
 // build the LED pixel array.
+// @TODO it'd be great if the remote server noticed a string of a single color instead of an array, and built its own array.
 $leds = [];
 for ( $i = 0; $i != 32; $i ++ )
 	$leds[] = $colors[ $query ];
