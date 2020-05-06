@@ -37,7 +37,5 @@ curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true ); // response.
 $result = curl_exec( $ch );
 curl_close( $ch );
 
-if ( $result )
-	echo $query;
-else
-	var_dump( $result ); // 💩
+// send back the color, or the error.
+echo $result ? $query :	json_encode( $result );
