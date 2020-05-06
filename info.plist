@@ -32,6 +32,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>A0109B10-47BB-442B-B30F-AE3FECB8460C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>170B07F9-EDE9-41B1-A737-70A9594C28FC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>BC12B4FD-3283-4901-8B25-3DBA2E1CC909</key>
 		<array>
 			<dict>
@@ -49,7 +62,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF124F61-710E-442E-B47E-0A1895DE669C</string>
+				<string>5824A2D0-CC5F-40EB-81B2-1DB0A28FC59D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -59,7 +72,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>5824A2D0-CC5F-40EB-81B2-1DB0A28FC59D</string>
+				<string>FF124F61-710E-442E-B47E-0A1895DE669C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -73,6 +86,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>C1BD6943-13A3-491B-9176-8EBD0D2D6BEC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F9C48C57-A828-41D6-AB95-28627EFF00A2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A0109B10-47BB-442B-B30F-AE3FECB8460C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -158,6 +184,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>5824A2D0-CC5F-40EB-81B2-1DB0A28FC59D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -180,7 +223,7 @@
 			<key>config</key>
 			<dict>
 				<key>triggerid</key>
-				<string>bl-yellow</string>
+				<string>bl-orange</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.external</string>
@@ -188,6 +231,33 @@
 			<string>16B7EC0C-C13F-4305-A063-4C9A488C7B27</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>&lt;?php
+
+require 'build-and-send-payload.php'
+
+?&gt;</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF124F61-710E-442E-B47E-0A1895DE669C</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -227,7 +297,7 @@ require 'bl.php';
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Set Busy Light</string>
+				<string>Red, Orange, Green, or Off</string>
 				<key>title</key>
 				<string>Set Busy Light</string>
 				<key>type</key>
@@ -245,33 +315,6 @@ require 'bl.php';
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>script</key>
-				<string>&lt;?php
-
-require 'build-and-send-payload.php'
-
-?&gt;</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>FF124F61-710E-442E-B47E-0A1895DE669C</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -282,7 +325,7 @@ require 'build-and-send-payload.php'
 						<key>matchmode</key>
 						<integer>4</integer>
 						<key>matchstring</key>
-						<string>^(red|orange|green|clear)$</string>
+						<string>^(red|orange|green|clear|ok)$</string>
 						<key>outputlabel</key>
 						<string>success</string>
 						<key>uid</key>
@@ -340,13 +383,21 @@ require 'build-and-send-payload.php'
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>bl-off</string>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>bl reset</string>
+				<key>subtext</key>
+				<string>Clear state.txt</string>
+				<key>text</key>
+				<string>Reset Busy Lights State</string>
+				<key>withspace</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>78D084DB-0DE5-447A-A96F-BB598706F67C</string>
+			<string>F9C48C57-A828-41D6-AB95-28627EFF00A2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -354,16 +405,27 @@ require 'build-and-send-payload.php'
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>'{query}', {allvars}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
+				<string></string>
+				<key>variables</key>
+				<dict/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>5824A2D0-CC5F-40EB-81B2-1DB0A28FC59D</string>
+			<string>A0109B10-47BB-442B-B30F-AE3FECB8460C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>bl-off</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>78D084DB-0DE5-447A-A96F-BB598706F67C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -392,7 +454,7 @@ require 'build-and-send-payload.php'
 		<key>16B7EC0C-C13F-4305-A063-4C9A488C7B27</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>xpos</key>
 			<integer>35</integer>
 			<key>ypos</key>
@@ -414,9 +476,9 @@ require 'build-and-send-payload.php'
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>495</integer>
+			<integer>535</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>110</integer>
 		</dict>
 		<key>78BF82D7-6D5E-4B14-9DAC-238898A4B447</key>
 		<dict>
@@ -442,6 +504,13 @@ require 'build-and-send-payload.php'
 			<integer>820</integer>
 			<key>ypos</key>
 			<integer>115</integer>
+		</dict>
+		<key>A0109B10-47BB-442B-B30F-AE3FECB8460C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>530</integer>
+			<key>ypos</key>
+			<integer>355</integer>
 		</dict>
 		<key>BC12B4FD-3283-4901-8B25-3DBA2E1CC909</key>
 		<dict>
@@ -469,6 +538,13 @@ require 'build-and-send-payload.php'
 			<integer>35</integer>
 			<key>ypos</key>
 			<integer>265</integer>
+		</dict>
+		<key>F9C48C57-A828-41D6-AB95-28627EFF00A2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>305</integer>
+			<key>ypos</key>
+			<integer>325</integer>
 		</dict>
 		<key>FB1B2597-D760-4B09-8994-4DB4DB125524</key>
 		<dict>
