@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.davidsword.busylight</string>
+	<string>com.davidsword.alfredunicornphat</string>
 	<key>connections</key>
 	<dict>
-		<key>16B7EC0C-C13F-4305-A063-4C9A488C7B27</key>
+		<key>39D816BF-EBA7-456D-B908-D167ED25EDC9</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C1BD6943-13A3-491B-9176-8EBD0D2D6BEC</string>
+				<string>FF124F61-710E-442E-B47E-0A1895DE669C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -23,7 +23,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C1BD6943-13A3-491B-9176-8EBD0D2D6BEC</string>
+				<string>FF124F61-710E-442E-B47E-0A1895DE669C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>15AC85E8-642A-40E8-ABFA-11228BA908FA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -45,55 +58,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>BC12B4FD-3283-4901-8B25-3DBA2E1CC909</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C1BD6943-13A3-491B-9176-8EBD0D2D6BEC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>C1BD6943-13A3-491B-9176-8EBD0D2D6BEC</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5824A2D0-CC5F-40EB-81B2-1DB0A28FC59D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>FF124F61-710E-442E-B47E-0A1895DE669C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>C8F29801-8BCF-42B2-B1AE-93787C3D8E3F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C1BD6943-13A3-491B-9176-8EBD0D2D6BEC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>F9C48C57-A828-41D6-AB95-28627EFF00A2</key>
 		<array>
 			<dict>
@@ -107,48 +71,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>FB1B2597-D760-4B09-8994-4DB4DB125524</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>51824601-9707-40D3-8BBE-AB2507CCE476</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>170B07F9-EDE9-41B1-A737-70A9594C28FC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>51824601-9707-40D3-8BBE-AB2507CCE476</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>78BF82D7-6D5E-4B14-9DAC-238898A4B447</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>FF124F61-710E-442E-B47E-0A1895DE669C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FB1B2597-D760-4B09-8994-4DB4DB125524</string>
+				<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -165,70 +92,27 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>_Busy Light</string>
+	<string>_Alfred Unicorn pHAT</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>bl-red</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>BC12B4FD-3283-4901-8B25-3DBA2E1CC909</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>'{query}', {allvars}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>aup</string>
+				<key>subtext</key>
+				<string>&lt;color&gt; &lt;brightness&gt; | &lt;off&gt;</string>
+				<key>text</key>
+				<string>Unicorn pHAT Controller</string>
+				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>5824A2D0-CC5F-40EB-81B2-1DB0A28FC59D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Status: {query}</string>
-				<key>title</key>
-				<string>Busy Light</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>bl-orange</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>16B7EC0C-C13F-4305-A063-4C9A488C7B27</string>
+			<string>39D816BF-EBA7-456D-B908-D167ED25EDC9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -262,83 +146,95 @@ require 'build-and-send-payload.php'
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>keyword</key>
-				<string>bl</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>&lt;?php
-
-require 'bl.php';
-
-?&gt;</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Red, Orange, Green, or Off</string>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Colour: {query}</string>
 				<key>title</key>
-				<string>Set Busy Light</string>
-				<key>type</key>
-				<integer>1</integer>
-				<key>withspace</key>
-				<true/>
+				<string>Unicorn pHAT</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>C1BD6943-13A3-491B-9176-8EBD0D2D6BEC</string>
+			<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>^(red|orange|green|clear|ok)$</string>
-						<key>outputlabel</key>
-						<string>success</string>
-						<key>uid</key>
-						<string>51824601-9707-40D3-8BBE-AB2507CCE476</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>uh oh</string>
+				<key>triggerid</key>
+				<string>aup</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>FB1B2597-D760-4B09-8994-4DB4DB125524</string>
+			<string>78D084DB-0DE5-447A-A96F-BB598706F67C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:RPI_URL}/state</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>15AC85E8-642A-40E8-ABFA-11228BA908FA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>aup state</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Get Unicorn pHAT Controller state</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>bl reset</string>
+				<key>subtext</key>
+				<string>Clear state.txt</string>
+				<key>text</key>
+				<string>Reset Busy Lights State</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F9C48C57-A828-41D6-AB95-28627EFF00A2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -370,40 +266,6 @@ require 'bl.php';
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>bl-green</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>C8F29801-8BCF-42B2-B1AE-93787C3D8E3F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>bl reset</string>
-				<key>subtext</key>
-				<string>Clear state.txt</string>
-				<key>text</key>
-				<string>Reset Busy Lights State</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>F9C48C57-A828-41D6-AB95-28627EFF00A2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>variables</key>
@@ -416,144 +278,74 @@ require 'bl.php';
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>bl-off</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>78D084DB-0DE5-447A-A96F-BB598706F67C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>'{query}', {allvars}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>78BF82D7-6D5E-4B14-9DAC-238898A4B447</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>16B7EC0C-C13F-4305-A063-4C9A488C7B27</key>
+		<key>15AC85E8-642A-40E8-ABFA-11228BA908FA</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>2</integer>
 			<key>xpos</key>
-			<integer>35</integer>
+			<integer>250</integer>
 			<key>ypos</key>
-			<integer>145</integer>
+			<integer>255</integer>
 		</dict>
 		<key>170B07F9-EDE9-41B1-A737-70A9594C28FC</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>note</key>
-			<string>the node setup is stateless, so this is a "last used" for "current"</string>
+			<string>temp place for last-used state until a GET request is made on the RPI</string>
 			<key>xpos</key>
-			<integer>820</integer>
+			<integer>490</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>590</integer>
 		</dict>
-		<key>5824A2D0-CC5F-40EB-81B2-1DB0A28FC59D</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>535</integer>
-			<key>ypos</key>
-			<integer>110</integer>
-		</dict>
-		<key>78BF82D7-6D5E-4B14-9DAC-238898A4B447</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>8</integer>
-			<key>xpos</key>
-			<integer>815</integer>
-			<key>ypos</key>
-			<integer>395</integer>
-		</dict>
-		<key>78D084DB-0DE5-447A-A96F-BB598706F67C</key>
+		<key>39D816BF-EBA7-456D-B908-D167ED25EDC9</key>
 		<dict>
 			<key>xpos</key>
 			<integer>35</integer>
 			<key>ypos</key>
-			<integer>380</integer>
+			<integer>10</integer>
+		</dict>
+		<key>78D084DB-0DE5-447A-A96F-BB598706F67C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>130</integer>
 		</dict>
 		<key>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>820</integer>
+			<integer>410</integer>
 			<key>ypos</key>
-			<integer>115</integer>
+			<integer>50</integer>
+		</dict>
+		<key>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>35</integer>
+			<key>ypos</key>
+			<integer>255</integer>
 		</dict>
 		<key>A0109B10-47BB-442B-B30F-AE3FECB8460C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>530</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>355</integer>
-		</dict>
-		<key>BC12B4FD-3283-4901-8B25-3DBA2E1CC909</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>1</integer>
-			<key>xpos</key>
-			<integer>35</integer>
-			<key>ypos</key>
-			<integer>30</integer>
-		</dict>
-		<key>C1BD6943-13A3-491B-9176-8EBD0D2D6BEC</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>11</integer>
-			<key>xpos</key>
-			<integer>305</integer>
-			<key>ypos</key>
-			<integer>200</integer>
-		</dict>
-		<key>C8F29801-8BCF-42B2-B1AE-93787C3D8E3F</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>5</integer>
-			<key>xpos</key>
-			<integer>35</integer>
-			<key>ypos</key>
-			<integer>265</integer>
+			<integer>620</integer>
 		</dict>
 		<key>F9C48C57-A828-41D6-AB95-28627EFF00A2</key>
 		<dict>
+			<key>note</key>
+			<string>@ temp for testing</string>
 			<key>xpos</key>
-			<integer>305</integer>
+			<integer>170</integer>
 			<key>ypos</key>
-			<integer>325</integer>
-		</dict>
-		<key>FB1B2597-D760-4B09-8994-4DB4DB125524</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
-			<key>xpos</key>
-			<integer>680</integer>
-			<key>ypos</key>
-			<integer>220</integer>
+			<integer>590</integer>
 		</dict>
 		<key>FF124F61-710E-442E-B47E-0A1895DE669C</key>
 		<dict>
@@ -562,15 +354,17 @@ require 'bl.php';
 			<key>note</key>
 			<string>curl to rPI</string>
 			<key>xpos</key>
-			<integer>535</integer>
+			<integer>250</integer>
 			<key>ypos</key>
-			<integer>200</integer>
+			<integer>50</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>RPI_NODEJS_ADDRESS</key>
-		<string>http://0.0.0.0:3000/</string>
+		<key>BRIGHTNESS</key>
+		<string>50</string>
+		<key>RPI_URL</key>
+		<string>http://localhost:3001</string>
 	</dict>
 	<key>version</key>
 	<string></string>

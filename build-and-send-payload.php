@@ -3,41 +3,40 @@
  * Handler for building and sending request from Alfred to Raspberry Pi
  * 
  * Translate words of colours to LED decimal array.
+ * 
+ * @see https://github.com/davidsword/node-unicorn
  */
 
 // phpcs:ignoreFile
-// @see https://github.com/Kylir/node-unicorn#the-led-driver.
 
 // From Alfred.
-$query   = isset( $argv[1] ) && ! empty( $argv[1] ) ? $argv[1] : 'off';
-$rpi_url = getevn( 'RPI_NODEJS_ADDRESS' );
+$query      = isset( $argv[1] ) && ! empty( $argv[1] ) ? $argv[1] : 'off';
 
-// short circut for now. @TODO enable once ready.
-die( $query );
+// maybe a brightness param
+if ( strstr( $query, ' ' ) ) {
+	$query_args = explode(' ',$query);
+	$query      = $query_args[0];
+	$brightness = $query_args[1];
+} else {
+	$brightness = getenv( 'BRIGHTNESS' );
+}
 
-// Uses decimal colours.
-// @see https://convertingcolors.com/
-// @TODO it'd be great if the remote server did the conversion, _no one_ works in decimal colors.
-$colors = [
-	'red'    => 16711680, // #FF0000
-	'orange' => 16753920, // #FFA500
-	'green'  => 1756160,  // #1ACC00
-	'off'    => 0,        // #000000
-];
+$color      = preg_replace( '/[^a-zA-Z0-9_\-#]/', '', $query );
+$rpi_url    = getenv( 'RPI_URL' );
+$endpoint   = "/display/".rawurlencode( $color )."/".intval( $brightness );
 
-// build the LED pixel array.
-// @TODO it'd be great if the remote server noticed a string of a single color instead of an array, and built its own array.
-$leds = [];
-for ( $i = 0; $i != 32; $i ++ )
-	$leds[] = $colors[ $query ];
+if ( 'off' === $query || '0' === $query || 0 === $query ) {
+	$endpoint   = "/display/off";
+}
 
 // ship it.
-$ch = curl_init( $rpi_url . '/display' );
-curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( [ 'leds' => $leds ] ) );
-curl_setopt( $ch, CURLOPT_HTTPHEADER, [ 'Content-Type:application/json' ] );
+$ch = curl_init( $rpi_url . $endpoint );
+curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( [ ] ) );
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true ); // response.
 $result = curl_exec( $ch );
 curl_close( $ch );
+
+//print_r($result);
 
 // send back the color, or the error.
 echo $result ? $query :	json_encode( $result );
