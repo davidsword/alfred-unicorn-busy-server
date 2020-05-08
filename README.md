@@ -1,4 +1,4 @@
-# alfred-rpi-busy-light
+# 🦄 Alfred Unicorn pHAT
 
 Alfred Workflow to change colour of Raspberry Pi running [node-unicorn](https://github.com/davidsword/node-unicorn) to control display of [Pimoroni Unicorn pHAT](https://shop.pimoroni.com/products/unicorn-phat).
 
