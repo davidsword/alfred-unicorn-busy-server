@@ -4,10 +4,14 @@ Alfred Workflow to change colour of Raspberry Pi running [node-unicorn](https://
 
 ![](images/ex1.png)
 
-Standard colours for "busy", "away", and "active" status'.
+Comes preloaded with standard colours for "busy", "away", and "active" status'.
 
-Use "off" to turn off,
+Use "off" to turn off, or type your own custom colours:
 
 ![](images/ex2.png)
 
-Accepts custom colours.
+Biggest potential of this workflow is the External Webhook. Using applescript you can trigger a lightchange from any workflow, cronjob, ect:
+
+```osascript
+tell application id "com.runningwithcrayons.Alfred" to run trigger "aup" in workflow "com.davidsword.alfredunicornphat" with argument "red"
+```
