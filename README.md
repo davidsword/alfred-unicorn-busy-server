@@ -10,8 +10,10 @@ Use "off" to turn off, or type your own custom colours:
 
 ![](images/ex2.png)
 
-Biggest potential of this workflow is the External Webhook. Using applescript you can trigger a lightchange from any workflow, cronjob, ect:
+Biggest potential of this workflow is the External Webhook. Using applescript you can trigger a light change from any workflow, cronjob, ect:
 
 ```osascript
 tell application id "com.runningwithcrayons.Alfred" to run trigger "aup" in workflow "com.davidsword.alfredunicornphat" with argument "red"
 ```
+
+Use `:aup` to view state in a browser. See code for inline @TODOs of improvements.
