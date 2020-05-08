@@ -95,7 +95,7 @@
 				<key>subtext</key>
 				<string>&lt;color&gt; &lt;brightness&gt; | &lt;off&gt;</string>
 				<key>title</key>
-				<string>Alfred Unicorn pHAT</string>
+				<string>Set Unicorn pHAT colour</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>

@@ -29,7 +29,7 @@ if ( $query && $shown < 1  ) {
 	$workflow->result(
 		md5( $query ),
 		strtolower( $query ),
-		"Set colour to \"{$query}\"",
+		"Set Unicorn pHAT colour to \"{$query}\"",
 		"",
 		'' // @TODO dynamic svg icons here would be cool
 	);
