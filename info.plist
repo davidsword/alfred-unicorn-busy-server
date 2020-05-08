@@ -45,8 +45,68 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E1CA7D61-22E2-4412-B2BC-09319266C764</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>15AC85E8-642A-40E8-ABFA-11228BA908FA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>82A36542-A716-4955-934D-F622C0569ED7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1AD7C71D-A764-4A20-8417-F7E6B96FF305</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>FF124F61-710E-442E-B47E-0A1895DE669C</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E1CA7D61-22E2-4412-B2BC-09319266C764</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>David Sword</string>
@@ -58,6 +118,61 @@
 	<string>_Alfred Unicorn pHAT</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>:aup</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Get Unicorn pHAT Controller state</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:RPI_URL}/state</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>15AC85E8-642A-40E8-ABFA-11228BA908FA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Basso</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>82A36542-A716-4955-934D-F622C0569ED7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -111,27 +226,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Colour: {query}</string>
-				<key>title</key>
-				<string>Unicorn pHAT</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -159,6 +253,63 @@ require 'build-and-send-payload.php'
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>false</string>
+						<key>outputlabel</key>
+						<string>error</string>
+						<key>uid</key>
+						<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>ok</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>E1CA7D61-22E2-4412-B2BC-09319266C764</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string>#FF0000D8</string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>2</integer>
+				<key>font</key>
+				<string>Operator Mono</string>
+				<key>largetypetext</key>
+				<string>Alfred UnicornpHAT: 
+
+Unable to connect to RPI ({var:RPI_URL})</string>
+				<key>textcolor</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>1AD7C71D-A764-4A20-8417-F7E6B96FF305</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>triggerid</key>
 				<string>aup</string>
 			</dict>
@@ -172,40 +323,21 @@ require 'build-and-send-payload.php'
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>:aup</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Get Unicorn pHAT Controller state</string>
-				<key>withspace</key>
+				<key>lastpathcomponent</key>
 				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Colour set to: {query}</string>
+				<key>title</key>
+				<string>Unicorn pHAT</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:RPI_URL}/state</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>15AC85E8-642A-40E8-ABFA-11228BA908FA</string>
+			<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -216,13 +348,28 @@ require 'build-and-send-payload.php'
 	<dict>
 		<key>15AC85E8-642A-40E8-ABFA-11228BA908FA</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>370</integer>
+			<integer>10</integer>
+		</dict>
+		<key>1AD7C71D-A764-4A20-8417-F7E6B96FF305</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>note</key>
+			<string>drymatic, but important</string>
+			<key>xpos</key>
+			<integer>575</integer>
+			<key>ypos</key>
+			<integer>205</integer>
 		</dict>
 		<key>43F119C8-F13B-4EEF-BDA6-9F17CB214D5C</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
 			<key>xpos</key>
 			<integer>55</integer>
 			<key>ypos</key>
@@ -230,6 +377,8 @@ require 'build-and-send-payload.php'
 		</dict>
 		<key>78D084DB-0DE5-447A-A96F-BB598706F67C</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
 			<key>xpos</key>
 			<integer>60</integer>
 			<key>ypos</key>
@@ -238,23 +387,43 @@ require 'build-and-send-payload.php'
 		<key>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>8</integer>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>430</integer>
+			<integer>575</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>345</integer>
+		</dict>
+		<key>82A36542-A716-4955-934D-F622C0569ED7</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<integer>575</integer>
+			<key>ypos</key>
+			<integer>95</integer>
 		</dict>
 		<key>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
 			<key>xpos</key>
 			<integer>55</integer>
 			<key>ypos</key>
-			<integer>370</integer>
+			<integer>10</integer>
+		</dict>
+		<key>E1CA7D61-22E2-4412-B2BC-09319266C764</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>420</integer>
+			<key>ypos</key>
+			<integer>180</integer>
 		</dict>
 		<key>FF124F61-710E-442E-B47E-0A1895DE669C</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>10</integer>
+			<integer>11</integer>
 			<key>note</key>
 			<string>curl to rPI</string>
 			<key>xpos</key>
