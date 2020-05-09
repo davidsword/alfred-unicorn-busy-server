@@ -111,7 +111,7 @@
 	<key>createdby</key>
 	<string>David Sword</string>
 	<key>description</key>
-	<string>Save seconds &amp; retire earlier</string>
+	<string>Alfred Workflow to change colour of a Raspberry Pi's Pimoroni Unicorn pHAT running node-unicorn.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -124,7 +124,7 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>:aup</string>
+				<string>:uph</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
@@ -189,7 +189,7 @@
 				<key>escaping</key>
 				<integer>100</integer>
 				<key>keyword</key>
-				<string>aup</string>
+				<string>uph</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -311,7 +311,7 @@ Unable to connect to RPI ({var:RPI_URL})</string>
 			<key>config</key>
 			<dict>
 				<key>triggerid</key>
-				<string>aup</string>
+				<string>uph</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.external</string>
@@ -343,7 +343,7 @@ Unable to connect to RPI ({var:RPI_URL})</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>https://github.com/davidsword/alfred-unicorn-phat</string>
 	<key>uidata</key>
 	<dict>
 		<key>15AC85E8-642A-40E8-ABFA-11228BA908FA</key>
@@ -439,8 +439,10 @@ Unable to connect to RPI ({var:RPI_URL})</string>
 		<key>RPI_URL</key>
 		<string>http://localhost:3001</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://davidsword.ca</string>
 </dict>

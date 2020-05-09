@@ -26,11 +26,22 @@ foreach ( $ex as $a ) {
 }
 
 if ( $query && $shown < 1  ) {
+
+	// maybe a brightness param
+	if ( strstr( $query, ' ' ) ) {
+		$query_args = explode(' ',$query);
+		$query = "\"{$query_args[0]}\"";
+		$subtitle = "@{$query_args[1]}% brightness";
+	} else {
+		$query = "\"{$query}\"";
+		$subtitle = '';
+	}
+
 	$workflow->result(
 		md5( $query ),
 		strtolower( $query ),
-		"Set Unicorn pHAT colour to \"{$query}\"",
-		"",
+		"Set colour to {$query}",
+		$subtitle,
 		'' // @TODO dynamic svg icons here would be cool
 	);
 }
