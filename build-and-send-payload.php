@@ -21,7 +21,7 @@ if ( strstr( $query, ' ' ) ) {
 	$brightness = getenv( 'BRIGHTNESS' );
 }
 
-$color    = preg_replace( '/[^a-zA-Z0-9_\-#]/', '', $query );
+$color    = preg_replace( '/[^a-zA-Z0-9]/', '', $query );
 $rpi_url  = getenv( 'RPI_URL' );
 $endpoint = "/display/".rawurlencode( $color )."/".intval( $brightness );
 
