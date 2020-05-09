@@ -4,7 +4,7 @@ Alfred Workflow to change colour of a Raspberry Pi's [Pimoroni Unicorn pHAT](htt
 
 ## Setup
 
-- Requires [node-unicorn](https://github.com/davidsword/node-unicorn) server running on a Raspberry Pi's [Pimoroni Unicorn pHAT](https://shop.pimoroni.com/products/unicorn-phat)
+- Requires [node-unicorn](https://github.com/davidsword/node-unicorn) server running on a Raspberry Pi w/ a [Pimoroni Unicorn pHAT](https://shop.pimoroni.com/products/unicorn-phat)
 - Download Workflow from [Releases](https://github.com/davidsword/alfred-unicorn-phat/releases) tab and install into Alfred
 - Set Workflow variables 
     - `RPI_URL` with no trailing slash to RPI, ex `http://192.168.0.0:3001`
