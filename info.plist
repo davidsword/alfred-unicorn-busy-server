@@ -86,7 +86,7 @@
 	<key>createdby</key>
 	<string>David Sword</string>
 	<key>description</key>
-	<string>Alfred Workflow to change colour of a Raspberry Pi's Pimoroni Unicorn pHAT running node-unicorn.</string>
+	<string>Alfred Workflow to view stats of a Raspberry Pi's Pimoroni Unicorn pHAT.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
