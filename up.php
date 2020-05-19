@@ -14,8 +14,14 @@ $stats = get_unicorn_phat_stats();
 $workflow->result(
 	md5( $a ),
 	'#',
-	"Stats: rgb({$stats['red']},{$stats['green']},{$stats['blue']}), ".round($stats['cpuTemp'],1)."°",
-	date('h:ia',strtotime( $stats['lastCalled'] )),
+	sprintf( 
+		"Stats: rgb(%d,%d,%d), %d°",
+		intval( $stats['red'] ),
+		intval( $stats['green'] ),
+		intval( $stats['blue'] ),
+		round($stats['cpuTemp'],1),
+	),
+	date( 'h:ia', strtotime( $stats['lastCalled'] ) ),
 	'' // @TODO dynamic svg icons here would be cool
 );
 
