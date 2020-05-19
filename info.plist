@@ -32,33 +32,8 @@
 				<false/>
 			</dict>
 		</array>
-		<key>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>15AC85E8-642A-40E8-ABFA-11228BA908FA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>E1CA7D61-22E2-4412-B2BC-09319266C764</key>
 		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>15AC85E8-642A-40E8-ABFA-11228BA908FA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>82A36542-A716-4955-934D-F622C0569ED7</string>
@@ -121,46 +96,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>:uph</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Get Unicorn pHAT Controller state</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:RPI_URL}/state</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>15AC85E8-642A-40E8-ABFA-11228BA908FA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>soundname</key>
 				<string>Basso</string>
 				<key>systemsound</key>
@@ -189,7 +124,7 @@
 				<key>escaping</key>
 				<integer>100</integer>
 				<key>keyword</key>
-				<string>uph</string>
+				<string>up</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -202,13 +137,13 @@
 				<string></string>
 				<key>script</key>
 				<string>&lt;?php
- require 'aup.php';</string>
+ require 'up.php';</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>&lt;color&gt; &lt;brightness&gt; | &lt;off&gt;</string>
+				<string></string>
 				<key>title</key>
 				<string>Set Unicorn pHAT colour</string>
 				<key>type</key>
@@ -233,7 +168,7 @@
 				<key>script</key>
 				<string>&lt;?php
 
-require 'build-and-send-payload.php'
+//require 'build-and-send-payload.php'
 
 ?&gt;</string>
 				<key>scriptargtype</key>
@@ -346,15 +281,6 @@ Unable to connect to RPI ({var:RPI_URL})</string>
 	<string>https://github.com/davidsword/alfred-unicorn-phat</string>
 	<key>uidata</key>
 	<dict>
-		<key>15AC85E8-642A-40E8-ABFA-11228BA908FA</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>400</integer>
-			<key>ypos</key>
-			<integer>10</integer>
-		</dict>
 		<key>1AD7C71D-A764-4A20-8417-F7E6B96FF305</key>
 		<dict>
 			<key>colorindex</key>
@@ -402,15 +328,6 @@ Unable to connect to RPI ({var:RPI_URL})</string>
 			<key>ypos</key>
 			<integer>95</integer>
 		</dict>
-		<key>9859B414-E5F9-499D-B8BD-9DCEE1F2F3A9</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>12</integer>
-			<key>xpos</key>
-			<integer>55</integer>
-			<key>ypos</key>
-			<integer>10</integer>
-		</dict>
 		<key>E1CA7D61-22E2-4412-B2BC-09319266C764</key>
 		<dict>
 			<key>colorindex</key>
@@ -434,13 +351,11 @@ Unable to connect to RPI ({var:RPI_URL})</string>
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>BRIGHTNESS</key>
+		<key>RPI_UNICORN_PHAT_BRIGHTNESS</key>
 		<string>50</string>
-		<key>RPI_URL</key>
-		<string>http://localhost:3001</string>
+		<key>RPI_UNICORN_PHAT_URL</key>
+		<string>http://192.168.1.142:5000</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>1.0.0</string>
 	<key>webaddress</key>

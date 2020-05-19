@@ -3,38 +3,55 @@
  * Handler for building and sending request from Alfred to Raspberry Pi
  * 
  * Translate words of colours to LED decimal array.
- * 
- * @see https://github.com/davidsword/node-unicorn
  */
 
-// phpcs:ignoreFile
-
 // From Alfred.
-$query      = isset( $argv[1] ) && ! empty( $argv[1] ) ? $argv[1] : 'off';
+$query  = isset( $argv[1] ) && ! empty( $argv[1] ) ? $argv[1] : 'off';
+$color  = preg_replace( '/[^a-zA-Z0-9]/', '', $query );
+$result = change_unicorn_phat( $color );
 
-// maybe a brightness param
-if ( strstr( $query, ' ' ) ) {
-	$query_args = explode(' ',$query);
-	$query      = $query_args[0];
-	$brightness = $query_args[1];
-} else {
-	$brightness = getenv( 'BRIGHTNESS' );
+// `red, `green` (or `off`)
+function change_unicorn_phat( $colour ) {
+
+	if ( in_array( $colour, [ 'on', 'off' ] ) ) {
+		$ch   = curl_init();
+		curl_setopt( $ch, CURLOPT_URL, getenv( 'RPI_UNICORN_PHAT_URL' ) . '/api/' . $colour );
+		curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 2 );
+		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+		$buffer = curl_exec( $ch );
+		curl_close( $ch );
+		return json_decode( $buffer );
+	}
+
+	// @TODO see if i need to factor in on/off.
+	$body = json_encode(
+		[
+			'red'        => 'red' === $colour ? 255 : 0,
+			'green'      => 'green' === $colour ? 255 : 0,
+			'blue'       => 0,
+			'brightness' => 0.5, // @TODO use getenv( 'RPI_UNICORN_PHAT_BRIGHTNESS' )
+			'Speed'      => null,
+		] 
+	);
+	$ch   = curl_init();
+	curl_setopt( $ch, CURLOPT_URL, getenv( 'RPI_UNICORN_PHAT_URL' ) . '/api/switch' );
+	curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 2 );
+	curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'POST' );
+	curl_setopt( $ch, CURLOPT_POSTFIELDS, $body );
+	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+	curl_setopt(
+		$ch,
+		CURLOPT_HTTPHEADER,
+		[
+			'Content-Type: application/json',
+			'Content-Length: ' . strlen( $body ),
+		]
+	);
+	$buffer = curl_exec( $ch );
+	curl_close( $ch );
+	return json_decode( $buffer );
 }
 
-$color    = preg_replace( '/[^a-zA-Z0-9]/', '', $query );
-$rpi_url  = getenv( 'RPI_URL' );
-$endpoint = "/display/".rawurlencode( $color )."/".intval( $brightness );
-
-if ( 'off' === $query || '0' === $query || 0 === $query ) {
-	$endpoint   = "/display/off";
-}
-
-// ship it.
-$ch = curl_init( $rpi_url . $endpoint );
-curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( [ ] ) );
-curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true ); // response.
-$result = curl_exec( $ch );
-curl_close( $ch );
 
 // send back the color, or the error.
-echo $result ? $query :	json_encode( $result );
+echo $result ? $query : json_encode( $result );
