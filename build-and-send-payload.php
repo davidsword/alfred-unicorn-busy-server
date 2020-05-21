@@ -10,12 +10,9 @@ require 'helpers.php';
 // From Alfred.
 $query  = isset( $argv[1] ) && ! empty( $argv[1] ) ? $argv[1] : 'off';
 
-// request should be `on`, `off`, or string rgb w brightness: `255,255,255@75`
-$request  = preg_replace( '/[^a-z0-9,@]/', '', strtolower( $query ) );
-
-if ( in_array( $request, [ 'on', 'off' ] ) ) {
+if ( is_string( $query ) && in_array( $query, [ 'on', 'off' ] ) ) {
 	$ch   = curl_init();
-	curl_setopt( $ch, CURLOPT_URL, getenv( 'RPI_UNICORN_PHAT_URL' ) . '/api/' . $request );
+	curl_setopt( $ch, CURLOPT_URL, getenv( 'RPI_UNICORN_PHAT_URL' ) . '/api/' . $query );
 	curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 2 );
 	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 	$buffer = curl_exec( $ch );
@@ -23,21 +20,18 @@ if ( in_array( $request, [ 'on', 'off' ] ) ) {
 	return json_decode( $buffer );
 }
 
-$parts      = explode( '@', $request );
-$colour     = explode( ',', $parts[0] );
-$brightness = $parts[1];
-
 // validate
-if ( ! strstr( $request, '@' ) || ! isset( $colour[2] ) ) {
-	die("error, passed in invalid data: {$query}");
+$query = json_decode( $query, JSON_OBJECT_AS_ARRAY );
+if ( ! is_array( $query ) || ! isset( $query['brightness'] ) ) {
+	die( "error, passed in invalid data" ); // probably never.
 }
 
 $body = json_encode(
 	[
-		'red'        => $colour[0],
-		'green'      => $colour[1],
-		'blue'       => $colour[2],
-		'brightness' => $brightness,
+		'red'        => intval( $query['rgb'][0] ),
+		'green'      => intval( $query['rgb'][1] ),
+		'blue'       => intval( $query['rgb'][2] ),
+		'brightness' => intval( $query['brightness'] ),
 		'Speed'      => null, // 🤷🏼‍♂️
 	] 
 );
@@ -60,4 +54,4 @@ curl_close( $ch );
 $result = json_decode( $buffer );
 
 // send back the color, or the error.
-echo $result ? rgbToWord( [ $colour[0], $colour[1], $colour[2] ] ) . " @ {$brightness}%" : json_encode( $result );
+echo $result ? preg_replace( '/[^a-zA-Z ]/', '', $query['name'] ) . " @ ".intval($query['brightness'])."%" : json_encode( $result );

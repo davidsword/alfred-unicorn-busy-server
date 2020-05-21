@@ -26,17 +26,22 @@ if ( $query_args && ! empty( $query_args[1] ) ) {
 	$subtitle   = '';
 }
 
-$colours = json_decode( file_get_contents( 'colour-lib.php' ), JSON_OBJECT_AS_ARRAY );
+$colours = json_decode( file_get_contents( 'colour-lib.json' ), JSON_OBJECT_AS_ARRAY );
 foreach ( $colours as $colour ) {
 
 	$name = $colour[0];
-	$rgb  = "{$colour[1][0]},{$colour[1][1]},{$colour[1][2]}";
+	$rgb  = $colour[1];
 	$hex  = $colour[2];
 
 	if ( ! $query || ( $query && search_keyword_in_string( $query, $name ) ) ) {
 		$workflow->result(
 			md5( $hex ),
-			"{$rgb}@{$brightness}",
+			json_encode([
+				'name' => $name,
+				'rgb'  => $rgb,
+				'hex'  => $hex,
+				'brightness'  => $brightness,
+			]),
 			ucfirst( $name ),
 			$subtitle,
 			'' // @TODO serve locally ..somehow. Alfred only accepts PNGs and ICNS.
