@@ -48,4 +48,4 @@ tell application id "com.runningwithcrayons.Alfred" to run trigger "up" in workf
 ## Notes
 
 * The unicorn-busy-server works off of rgb, however as a web developer I felt hex and [CSS colours names](https://www.w3schools.com/colors/colors_names.asp) is more common, so that's the primary useage here.
-* [`colour-lib--full.php`](colour-lib--full.php) includes more colours, swap out for a bigger library.
+* [`colour-lib--full.json`](colour-lib--full.json) includes more colours, swap out for a bigger library.
