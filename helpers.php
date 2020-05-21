@@ -15,7 +15,7 @@ function get_unicorn_phat_stats() {
 }
 
 function rgbToWord( $val ) {
-	$colours = json_decode( file_get_contents( 'colour-lib.php' ), JSON_OBJECT_AS_ARRAY );
+	$colours = json_decode( file_get_contents( 'colour-lib.json' ), JSON_OBJECT_AS_ARRAY );
 	$distances = array();
 	foreach ( $colours as $c )
 		$distances[ $c[0] ] = distancel2( $c[1], $val );
