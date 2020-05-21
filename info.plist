@@ -6,6 +6,19 @@
 	<string>com.davidsword.alfredunicornphat</string>
 	<key>connections</key>
 	<dict>
+		<key>1AD7C71D-A764-4A20-8417-F7E6B96FF305</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5A7F2E26-3593-40A2-B231-753F7887C9E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>34486327-6B50-40DA-B934-8E3044A12BE0</key>
 		<array>
 			<dict>
@@ -23,31 +36,11 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>60B63ACE-24F2-4846-930E-E26CFDB81899</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>turn on</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>9D7E281D-F1D3-4A85-BE5C-039D8A542A93</string>
+				<string>88E61601-AB36-4FD0-B856-91A5801E3098</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>80748302-2861-442D-B4A6-B1D43E7D5509</string>
-				<key>modifiers</key>
-				<integer>1179648</integer>
-				<key>modifiersubtext</key>
-				<string>turn off</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -91,6 +84,51 @@
 				<false/>
 			</dict>
 		</array>
+		<key>88E61601-AB36-4FD0-B856-91A5801E3098</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1AD7C71D-A764-4A20-8417-F7E6B96FF305</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>761F53C7-AF60-42B9-BFA2-AF60B170F12C</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9D7E281D-F1D3-4A85-BE5C-039D8A542A93</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>60B63ACE-24F2-4846-930E-E26CFDB81899</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>80748302-2861-442D-B4A6-B1D43E7D5509</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9D7E281D-F1D3-4A85-BE5C-039D8A542A93</key>
 		<array>
 			<dict>
@@ -106,18 +144,6 @@
 		</array>
 		<key>E1CA7D61-22E2-4412-B2BC-09319266C764</key>
 		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>82A36542-A716-4955-934D-F622C0569ED7</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>1AD7C71D-A764-4A20-8417-F7E6B96FF305</string>
@@ -168,59 +194,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>up</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>78D084DB-0DE5-447A-A96F-BB598706F67C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>soundname</key>
-				<string>Basso</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>82A36542-A716-4955-934D-F622C0569ED7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>script</key>
-				<string>&lt;?php
-
-echo 'on';</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>60B63ACE-24F2-4846-930E-E26CFDB81899</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alignment</key>
 				<integer>0</integer>
 				<key>backgroundcolor</key>
@@ -234,7 +207,7 @@ echo 'on';</string>
 				<key>largetypetext</key>
 				<string>Alfred UnicornpHAT: 
 
-Unable to connect to RPI ({var:RPI_URL})</string>
+Unable to connect to RPI ({var:RPI_UNICORN_PHAT_URL})</string>
 				<key>textcolor</key>
 				<string></string>
 			</dict>
@@ -244,6 +217,101 @@ Unable to connect to RPI ({var:RPI_URL})</string>
 			<string>1AD7C71D-A764-4A20-8417-F7E6B96FF305</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Basso</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>5A7F2E26-3593-40A2-B231-753F7887C9E4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>keyword</key>
+				<string>up</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>&lt;?php
+ require 'up.php';</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Interface w/ Unicorn pHAT colour</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>43F119C8-F13B-4EEF-BDA6-9F17CB214D5C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>error</string>
+						<key>outputlabel</key>
+						<string>error</string>
+						<key>uid</key>
+						<string>761F53C7-AF60-42B9-BFA2-AF60B170F12C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>ok</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>88E61601-AB36-4FD0-B856-91A5801E3098</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -322,52 +390,36 @@ require('build-and-send-payload.php');</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>keyword</key>
+				<key>triggerid</key>
 				<string>up</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>&lt;?php
- require 'up.php';</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Interface w/ Unicorn pHAT colour</string>
-				<key>type</key>
-				<integer>1</integer>
-				<key>withspace</key>
-				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>43F119C8-F13B-4EEF-BDA6-9F17CB214D5C</string>
+			<string>78D084DB-0DE5-447A-A96F-BB598706F67C</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Colour set to: {query}</string>
+				<key>title</key>
+				<string>Unicorn pHAT</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -402,23 +454,27 @@ require('build-and-send-payload.php');</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>concurrently</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Colour set to: {query}</string>
-				<key>title</key>
-				<string>Unicorn pHAT</string>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>&lt;?php
+
+echo 'on';</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
+			<string>60B63ACE-24F2-4846-930E-E26CFDB81899</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -448,6 +504,25 @@ echo 'off';</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://github.com/davidsword/alfred-unicorn-phat/blob/master/README.md</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A7D18028-EB2C-46E8-9352-4D4563A2BA97</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -466,25 +541,6 @@ echo 'off';</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://github.com/davidsword/alfred-unicorn-phat/blob/master/README.md</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>A7D18028-EB2C-46E8-9352-4D4563A2BA97</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>https://github.com/davidsword/alfred-unicorn-phat</string>
@@ -493,13 +549,13 @@ echo 'off';</string>
 		<key>1AD7C71D-A764-4A20-8417-F7E6B96FF305</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>4</integer>
+			<integer>1</integer>
 			<key>note</key>
 			<string>drymatic, but important</string>
 			<key>xpos</key>
-			<integer>885</integer>
+			<integer>670</integer>
 			<key>ypos</key>
-			<integer>165</integer>
+			<integer>50</integer>
 		</dict>
 		<key>34486327-6B50-40DA-B934-8E3044A12BE0</key>
 		<dict>
@@ -508,9 +564,9 @@ echo 'off';</string>
 			<key>note</key>
 			<string>send request</string>
 			<key>xpos</key>
-			<integer>570</integer>
+			<integer>670</integer>
 			<key>ypos</key>
-			<integer>215</integer>
+			<integer>365</integer>
 		</dict>
 		<key>43F119C8-F13B-4EEF-BDA6-9F17CB214D5C</key>
 		<dict>
@@ -523,6 +579,15 @@ echo 'off';</string>
 			<key>ypos</key>
 			<integer>215</integer>
 		</dict>
+		<key>5A7F2E26-3593-40A2-B231-753F7887C9E4</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<integer>820</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
 		<key>60B63ACE-24F2-4846-930E-E26CFDB81899</key>
 		<dict>
 			<key>colorindex</key>
@@ -530,27 +595,27 @@ echo 'off';</string>
 			<key>note</key>
 			<string>on</string>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>385</integer>
 		</dict>
 		<key>78D084DB-0DE5-447A-A96F-BB598706F67C</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>11</integer>
 			<key>xpos</key>
-			<integer>125</integer>
+			<integer>55</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>370</integer>
 		</dict>
 		<key>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>885</integer>
+			<integer>935</integer>
 			<key>ypos</key>
-			<integer>305</integer>
+			<integer>375</integer>
 		</dict>
 		<key>80748302-2861-442D-B4A6-B1D43E7D5509</key>
 		<dict>
@@ -559,18 +624,18 @@ echo 'off';</string>
 			<key>note</key>
 			<string>off</string>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>355</integer>
+			<integer>505</integer>
 		</dict>
-		<key>82A36542-A716-4955-934D-F622C0569ED7</key>
+		<key>88E61601-AB36-4FD0-B856-91A5801E3098</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>12</integer>
 			<key>xpos</key>
-			<integer>885</integer>
+			<integer>195</integer>
 			<key>ypos</key>
-			<integer>55</integer>
+			<integer>235</integer>
 		</dict>
 		<key>9D7E281D-F1D3-4A85-BE5C-039D8A542A93</key>
 		<dict>
@@ -579,9 +644,9 @@ echo 'off';</string>
 			<key>note</key>
 			<string>select colour</string>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>455</integer>
 			<key>ypos</key>
-			<integer>215</integer>
+			<integer>240</integer>
 		</dict>
 		<key>A7D18028-EB2C-46E8-9352-4D4563A2BA97</key>
 		<dict>
@@ -597,9 +662,9 @@ echo 'off';</string>
 			<key>colorindex</key>
 			<integer>6</integer>
 			<key>xpos</key>
-			<integer>730</integer>
+			<integer>830</integer>
 			<key>ypos</key>
-			<integer>235</integer>
+			<integer>385</integer>
 		</dict>
 		<key>F36F222A-5AFB-44D5-9C40-6E918879907C</key>
 		<dict>

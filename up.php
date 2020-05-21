@@ -13,9 +13,9 @@ $stats = get_unicorn_phat_stats();
 
 $workflow->result(
 	md5( $a ),
-	'',
+	! $stats ? 'error' : '',
 	'Control Unicorn pHAT',
-	sprintf( 
+	! $stats ? '❌ Unable to connect to RPI' : sprintf( 
 		'Currently: %s | %s | %d°',
 		rgbToWord( [ $stats['red'], $stats['green'], $stats['blue'] ] ),
 		date( 'h:ia', strtotime( $stats['lastCalled'] ) ),
