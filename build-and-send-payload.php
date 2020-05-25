@@ -31,7 +31,7 @@ $body = json_encode(
 		'red'        => intval( $query['rgb'][0] ),
 		'green'      => intval( $query['rgb'][1] ),
 		'blue'       => intval( $query['rgb'][2] ),
-		'brightness' => intval( $query['brightness'] ),
+		'brightness' => 0.25, // intval( $query['brightness'] / 100 )
 		'Speed'      => null, // 🤷🏼‍♂️
 	] 
 );
