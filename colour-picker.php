@@ -25,16 +25,21 @@ foreach ( $colours as $colour ) {
 	$hex  = $colour[2];
 
 	if ( ! $query || ( $query && search_keyword_in_string( $query, $name ) ) ) {
+
+		$text_name = trim( preg_replace( '/[^a-z0-9_\-]/', '', $name ) );
+		$icon = file_exists("images/icons/{$text_name}.png") ? "images/icons/{$text_name}.png" : '';
+
 		$workflow->result(
 			md5( $hex ),
 			json_encode([
 				'name' => $name,
+				'text_name' => $text_name,
 				'rgb'  => $rgb,
 				'hex'  => $hex,
 			]),
-			ucfirst( $name ),
+			ucfirst( $text_name ),
 			$subtitle,
-			'' // @TODO serve locally ..somehow. Alfred only accepts PNGs and ICNS.
+			$icon
 		);
 		$shown++;
 	}

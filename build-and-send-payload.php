@@ -10,6 +10,10 @@ require 'helpers.php';
 // From Alfred.
 $query  = isset( $argv[1] ) && ! empty( $argv[1] ) ? $argv[1] : 'off';
 
+$brightness = getenv( 'RPI_UNICORN_PHAT_BRIGHTNESS' );
+$brightness = ( $brightness > 0.5 )   ? 0.5   : $brightness; // safegaurd cap @50%.
+$brightness = ( $brightness < 0.172 ) ? 0.172 : $brightness; // lowest for basic colours.
+
 if ( is_string( $query ) && in_array( $query, [ 'on', 'off' ] ) ) {
 	$ch   = curl_init();
 	curl_setopt( $ch, CURLOPT_URL, getenv( 'RPI_UNICORN_PHAT_URL' ) . '/api/' . $query );
@@ -26,10 +30,6 @@ if ( ! is_array( $query ) ) {
 	die( "error, passed in invalid data" ); // probably never.
 }
 
-$brightness = getenv( 'RPI_UNICORN_PHAT_BRIGHTNESS' );
-$brightness = ( $brightness > 0.5 )   ? 0.5 : $brightness;   // safe gaurd cap @50.
-$brightness = ( $brightness < 0.172 ) ? 0.172 : $brightness; // lowest for basic colours.
-
 $body = json_encode(
 	[
 		'red'        => intval( $query['rgb'][0] ),
@@ -39,7 +39,7 @@ $body = json_encode(
 		'Speed'      => null, // 🤷🏼‍♂️
 	] 
 );
-echo print_r( $body );
+
 $ch   = curl_init();
 curl_setopt( $ch, CURLOPT_URL, getenv( 'RPI_UNICORN_PHAT_URL' ) . '/api/switch' );
 curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 2 );
@@ -59,4 +59,4 @@ curl_close( $ch );
 $result = json_decode( $buffer );
 
 // send back the color, or the error.
-echo $result ? preg_replace( '/[^a-zA-Z ]/', '', $query['name'] ) : json_encode( $result );
+echo $result ? $query['name'] : json_encode( $result );
