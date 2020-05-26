@@ -1,10 +1,6 @@
 <?php
 /**
  * Output UI for Alfred
- * 
- * @TODO allow for hex, so `up > #00A299`
- * @TODO `random`
- * @TODO `rainbow` (needs API support)
  */
 
 require 'workflows.php';
