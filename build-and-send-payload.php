@@ -22,16 +22,20 @@ if ( is_string( $query ) && in_array( $query, [ 'on', 'off' ] ) ) {
 
 // validate
 $query = json_decode( $query, JSON_OBJECT_AS_ARRAY );
-if ( ! is_array( $query ) || ! isset( $query['brightness'] ) ) {
+if ( ! is_array( $query ) ) {
 	die( "error, passed in invalid data" ); // probably never.
 }
+
+$brightness = getenv( 'RPI_UNICORN_PHAT_BRIGHTNESS' );
+$brightness = ( $brightness > 50 ) ? 50 : $brightness;
+$brightness = ( $brightness < 20 ) ? 20 : $brightness;
 
 $body = json_encode(
 	[
 		'red'        => intval( $query['rgb'][0] ),
 		'green'      => intval( $query['rgb'][1] ),
 		'blue'       => intval( $query['rgb'][2] ),
-		'brightness' => 0.25, // intval( $query['brightness'] / 100 )
+		'brightness' => getenv( 'RPI_UNICORN_PHAT_BRIGHTNESS' ) / 100,
 		'Speed'      => null, // 🤷🏼‍♂️
 	] 
 );
@@ -54,4 +58,4 @@ curl_close( $ch );
 $result = json_decode( $buffer );
 
 // send back the color, or the error.
-echo $result ? preg_replace( '/[^a-zA-Z ]/', '', $query['name'] ) . " @ ".intval($query['brightness'])."%" : json_encode( $result );
+echo $result ? preg_replace( '/[^a-zA-Z ]/', '', $query['name'] ) : json_encode( $result );
