@@ -27,18 +27,19 @@ if ( ! is_array( $query ) ) {
 }
 
 $brightness = getenv( 'RPI_UNICORN_PHAT_BRIGHTNESS' );
-$brightness = ( $brightness > 50 ) ? 50 : $brightness;
-$brightness = ( $brightness < 20 ) ? 20 : $brightness;
+$brightness = ( $brightness > 0.5 )   ? 0.5 : $brightness;   // safe gaurd cap @50.
+$brightness = ( $brightness < 0.172 ) ? 0.172 : $brightness; // lowest for basic colours.
 
 $body = json_encode(
 	[
 		'red'        => intval( $query['rgb'][0] ),
 		'green'      => intval( $query['rgb'][1] ),
 		'blue'       => intval( $query['rgb'][2] ),
-		'brightness' => getenv( 'RPI_UNICORN_PHAT_BRIGHTNESS' ) / 100,
+		'brightness' => floatval( $brightness ),
 		'Speed'      => null, // 🤷🏼‍♂️
 	] 
 );
+echo print_r( $body );
 $ch   = curl_init();
 curl_setopt( $ch, CURLOPT_URL, getenv( 'RPI_UNICORN_PHAT_URL' ) . '/api/switch' );
 curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 2 );
