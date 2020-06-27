@@ -24,7 +24,7 @@ class Unicorn_Busy_Server {
 		// 'rainbow' => [
 		// 'emoji' => '🌈',
 		// ],
-		'Off'       => [
+		'off'       => [ //
 			'emoji' => '⚫️',
 		],
 	];
