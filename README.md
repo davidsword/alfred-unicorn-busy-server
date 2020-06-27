@@ -1,6 +1,7 @@
 # 🦄 Alfred Unicorn Busy Server
 
 Alfred Workflow to manage status of a [unicorn-busy-server](https://github.com/estruyf/unicorn-busy-server/).
+![](images/workflow.png)
 
 ## Setup
 

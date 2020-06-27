@@ -51,16 +51,6 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>88E61601-AB36-4FD0-B856-91A5801E3098</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>1A7E303B-1885-4F8E-B4B3-D72E443D961D</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
@@ -76,6 +66,16 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Set to Busy</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>88E61601-AB36-4FD0-B856-91A5801E3098</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -148,6 +148,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>1AD7C71D-A764-4A20-8417-F7E6B96FF305</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -155,16 +165,6 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -186,13 +186,105 @@
 	<key>createdby</key>
 	<string>David Sword</string>
 	<key>description</key>
-	<string>Interface for Unicorn Busy Server on a Raspberry Pi</string>
+	<string>Workflow to manage status of a Unicorn Busy Server</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>_Alfred Unicorn Busy Server</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Unicorn Busy Server</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>ubs</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>78D084DB-0DE5-447A-A96F-BB598706F67C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>&lt;?php
+
+require('3-status-change.php');</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>34486327-6B50-40DA-B934-8E3044A12BE0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>STATUS</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>0A3AE69F-7526-452E-907B-B65EC21B3DBD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Off</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>1A7E303B-1885-4F8E-B4B3-D72E443D961D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -241,6 +333,101 @@ require( '2-status-select.php' );</string>
 			<string>9D7E281D-F1D3-4A85-BE5C-039D8A542A93</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>keyword</key>
+				<string>ubs</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading Status...</string>
+				<key>script</key>
+				<string>&lt;?php
+ require '1-status-current.php';</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Unicorn Busy Server</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>43F119C8-F13B-4EEF-BDA6-9F17CB214D5C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>error</string>
+						<key>outputlabel</key>
+						<string>error</string>
+						<key>uid</key>
+						<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>ok</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>E1CA7D61-22E2-4412-B2BC-09319266C764</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Busy</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>9F6B061A-6117-4F27-A932-BF2E80E1FAB5</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -306,199 +493,12 @@ Double check the RPI is on, and the URL above doesn't have a trailing slash.</st
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>Off</string>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>1A7E303B-1885-4F8E-B4B3-D72E443D961D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>keyword</key>
-				<string>ubs</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading Status...</string>
-				<key>script</key>
-				<string>&lt;?php
- require '1-status-current.php';</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Unicorn Busy Server</string>
-				<key>type</key>
-				<integer>1</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>43F119C8-F13B-4EEF-BDA6-9F17CB214D5C</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>&lt;?php
-
-require('3-status-change.php');</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>34486327-6B50-40DA-B934-8E3044A12BE0</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>error</string>
-						<key>outputlabel</key>
-						<string>error</string>
-						<key>uid</key>
-						<string>033AEDA6-C8ED-4C2B-9597-5B2DFE38759D</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>ok</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>E1CA7D61-22E2-4412-B2BC-09319266C764</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>variables</key>
-				<dict>
-					<key>STATUS</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>0A3AE69F-7526-452E-907B-B65EC21B3DBD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>Busy</string>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>9F6B061A-6117-4F27-A932-BF2E80E1FAB5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Unicorn Busy Server</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>ubs</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>78D084DB-0DE5-447A-A96F-BB598706F67C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://github.com/davidsword/alfred-unicorn-phat/blob/master/README.md</string>
+				<string>https://github.com/davidsword/alfred-unicorn-busy-server/blob/master/README.md</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -532,22 +532,26 @@ require('3-status-change.php');</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>https://github.com/davidsword/alfred-unicorn-phat</string>
+	<string>https://github.com/davidsword/alfred-unicorn-busy-server</string>
 	<key>uidata</key>
 	<dict>
 		<key>0A3AE69F-7526-452E-907B-B65EC21B3DBD</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
 			<key>xpos</key>
-			<integer>475</integer>
+			<integer>640</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>90</integer>
 		</dict>
 		<key>1A7E303B-1885-4F8E-B4B3-D72E443D961D</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>225</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>150</integer>
 		</dict>
 		<key>1AD7C71D-A764-4A20-8417-F7E6B96FF305</key>
 		<dict>
@@ -556,25 +560,25 @@ require('3-status-change.php');</string>
 			<key>note</key>
 			<string>cant connect to RPI</string>
 			<key>xpos</key>
-			<integer>760</integer>
+			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>115</integer>
+			<integer>280</integer>
 		</dict>
 		<key>34486327-6B50-40DA-B934-8E3044A12BE0</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>7</integer>
+			<integer>6</integer>
 			<key>note</key>
 			<string>3-status-change.php</string>
 			<key>xpos</key>
-			<integer>530</integer>
+			<integer>695</integer>
 			<key>ypos</key>
-			<integer>195</integer>
+			<integer>60</integer>
 		</dict>
 		<key>43F119C8-F13B-4EEF-BDA6-9F17CB214D5C</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>11</integer>
+			<integer>10</integer>
 			<key>note</key>
 			<string>1-status-current.php</string>
 			<key>xpos</key>
@@ -585,70 +589,76 @@ require('3-status-change.php');</string>
 		<key>78D084DB-0DE5-447A-A96F-BB598706F67C</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>11</integer>
+			<integer>10</integer>
 			<key>xpos</key>
 			<integer>30</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>60</integer>
 		</dict>
 		<key>7FE97519-9DA2-43E6-8075-0E7B0AD09B7E</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>4</integer>
 			<key>xpos</key>
-			<integer>760</integer>
+			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>255</integer>
+			<integer>40</integer>
 		</dict>
 		<key>88E61601-AB36-4FD0-B856-91A5801E3098</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>210</integer>
+			<integer>225</integer>
 			<key>ypos</key>
-			<integer>120</integer>
+			<integer>290</integer>
 		</dict>
 		<key>9D7E281D-F1D3-4A85-BE5C-039D8A542A93</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>9</integer>
+			<integer>8</integer>
 			<key>note</key>
 			<string>2-status-select.php</string>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>30</integer>
+			<integer>185</integer>
 		</dict>
 		<key>9F6B061A-6117-4F27-A932-BF2E80E1FAB5</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>225</integer>
 			<key>ypos</key>
-			<integer>235</integer>
+			<integer>220</integer>
 		</dict>
 		<key>A7D18028-EB2C-46E8-9352-4D4563A2BA97</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>215</integer>
+			<integer>225</integer>
 			<key>ypos</key>
-			<integer>455</integer>
+			<integer>380</integer>
 		</dict>
 		<key>E1CA7D61-22E2-4412-B2BC-09319266C764</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
 			<key>xpos</key>
-			<integer>670</integer>
+			<integer>905</integer>
 			<key>ypos</key>
-			<integer>215</integer>
+			<integer>195</integer>
 		</dict>
 		<key>F36F222A-5AFB-44D5-9C40-6E918879907C</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>11</integer>
+			<integer>10</integer>
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>455</integer>
+			<integer>380</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -658,6 +668,8 @@ require('3-status-change.php');</string>
 		<key>UBS_BRIGHTNESS</key>
 		<string>0.172</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>2.0.0</string>
 	<key>webaddress</key>
