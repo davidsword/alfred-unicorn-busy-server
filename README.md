@@ -1,48 +1,50 @@
-# 🦄 Alfred Unicorn pHAT
+# 🦄 Alfred Unicorn Busy Server
 
-Alfred Workflow to view status of and modify display of a [Pimoroni Unicorn pHAT](https://shop.pimoroni.com/products/unicorn-phat) using [unicorn-busy-server](https://github.com/estruyf/unicorn-busy-server/) on a Raspberry Pi.
-
-![](images/workflow.png)
+Alfred Workflow to manage status of a [unicorn-busy-server](https://github.com/estruyf/unicorn-busy-server/.
 
 ## Setup
 
-- Requires [unicorn-busy-server](https://github.com/estruyf/unicorn-busy-server/) server running on a Raspberry Pi w/ a [Pimoroni Unicorn pHAT](https://shop.pimoroni.com/products/unicorn-phat)
-- Download Workflow from [Releases](https://github.com/davidsword/alfred-unicorn-phat/releases) tab and install into Alfred
+- Requires @estruyf 's [unicorn-busy-server](https://github.com/estruyf/unicorn-busy-server/) server running on a Raspberry Pi w/ a [Pimoroni Unicorn pHAT](https://shop.pimoroni.com/products/unicorn-phat)
+- Download Workflow from Releases tab and install into Alfred
 - Set variables
-  - `RPI_UNICORN_PHAT_BRIGHTNESS` an interger for default brightness, between `20`-`50`. 
-  - `RPI_UNICORN_PHAT_URL` the local IP address of your rpi with the port and no trailing slash
+  - `UBS_BRIGHTNESS` a float for default brightness, between `0.2`-`0.5`
+  - `UBS_ADDRESS` the address of your rpi with the port and no trailing slash, example `http://192.0.0.0:5000`
 
 ## Usage
 
+![](images/status-current.png)
+
 Keyword trigger
 
-- `up` view status `<current nearest colour> | <last time updated> | <rpi cpu temp>`
-  - `⌅` to enter the change colour filter
-  - `⌘` to turn on
-  - `⌘⇧` to turn off
+- `ubs` view status
+  - `⌅` to enter the change status
+  - `⌘⌅` to quick change status to Busy
+  - `⌥⌅` to quick change status off
 
-![](images/up.png)
+Select Status
 
-Once in the colour change filter:
+![](images/status-select.png)
 
-* `<colourName>` - to select a predefined common colour, ie: `red`, `green`
-
-![](images/up-select.png)
-
+![](images/status-change.png)
 
 ## Integration
 
-Use external trigger to use workflow to control colours of Unicorn pHAT:
+Use external trigger to use workflow to control the status:
 
 ```
-tell application id "com.runningwithcrayons.Alfred" to run trigger "up" in workflow "com.davidsword.alfredunicornphat" with argument "red"
+tell application id "com.runningwithcrayons.Alfred" to run trigger "ubs" in workflow "com.davidsword.alfredunicornbusyserver" with argument "Busy"
 ```
+
+Accepts `Busy`, `Avaliable`, `Away`, `Off`
 
 ## TODO
 
-- [ ] support for setting display via hex colour, ie `up > #c0ffee`
+- [ ] Brightness isn't respected at the API level
+- [ ] Rainbow via this CURL doesn't work on the API, its `500`ing for me
+- [ ] support for the `/api/switch` endpoint, passing in hex colours, ie `up > #c0ffee`
 
-## Notes
+## Links
 
-* The unicorn-busy-server works off of rgb, however as a web developer I felt hex and [CSS colours names](https://www.w3schools.com/colors/colors_names.asp) is more common, so that's the primary useage here.
-* [`colour-lib--full.json`](colour-lib--full.json) includes more colours, swap out for a bigger library.
+* https://www.eliostruyf.com/diy-building-busy-light-show-microsoft-teams-presence/
+* https://davidsword.ca/slack-busy-light/
+* https://github.com/estruyf/unicorn-busy-server/
