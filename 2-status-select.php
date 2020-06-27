@@ -13,7 +13,7 @@ foreach ( $unicorn->statuses as $status => $status_meta ) {
 
 	if ( ! $query || ( $query && search_keyword_in_string( $query, $status ) ) ) {
 
-		$png  = $unicorn->is_valid_status( $status ) ? $status : "images/icons/{$status}.png" : 'icon.png';
+		$png  = $unicorn->is_valid_status( $status ) ? "images/icons/{$status}.png" : 'icon.png';
 		$icon = file_exists( $png ) ? $png : '';
 
 		$workflow->result(
